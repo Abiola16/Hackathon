@@ -172,15 +172,6 @@ nav{
 .pay-container .container-wrapper .setup-container .st-text-icon-container .show-more-button{
     display: block;
 }
-.hidden {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-
-  .hidden.show {
-    max-height: 200px; /* Set to a suitable maximum height */
-  }
 .pay-container .container-wrapper .setup-container .st-text-icon-container .close-button{
     display: none;
 }
@@ -213,12 +204,26 @@ nav{
     justify-content: space-between;
     align-items: center;
     /* flex-direction: column; */
-    gap: 215px;
+    gap: 180px;
 }
 .pay-container .container-wrapper .setup-container .shop-container .store-container .content-container .text-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s, height 0.3s ease-out;
+}
+.hidden2 {
+    display: flex;
+    flex-direction: column;
+}
+.hidden.show {
+    opacity: 1;
+    height: auto; 
 }
 .pay-container .container-wrapper .setup-container .shop-container .store-container .content-container .text-container .title{
     color: #000;
