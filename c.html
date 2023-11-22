@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Toggle</title>
+  <title>Toggle Two Sections</title>
 
   <style>
     body {
@@ -21,14 +21,21 @@
       cursor: pointer;
     }
 
-    #hiddenContent {
-      max-height: 0;
+    .hidden-content {
+      opacity: 0;
+      height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease-out;
+      transition: opacity 0.3s, height 0.3s ease-out;
     }
 
-    #hiddenContent.show {
-      max-height: 200px; /* Set to a suitable maximum height */
+    .hidden-content.show {
+      opacity: 1;
+      height: auto;
+    }
+
+    #imageSection,
+    #additionalContentSection {
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -37,8 +44,15 @@
 <div class="toggle-container">
   <h2>Click the button to toggle the content</h2>
   <div id="contentToggle" onclick="toggleContent()">Toggle Content</div>
-  <div id="hiddenContent">
-    <p>This is the hidden content that will smoothly drop down when the button is clicked.</p>
+  
+  <div id="hiddenContent" class="hidden-content">
+    <div id="imageSection">
+      <img src="your-image-url.jpg" alt="Your Image">
+    </div>
+    
+    <div id="additionalContentSection">
+      <p>This is additional hidden content that will smoothly drop down when the button is clicked.</p>
+    </div>
   </div>
 </div>
 
