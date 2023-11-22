@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status Bar Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .content-block {
+      margin-bottom: 20px;
+    }
+
+    .status-bar {
+      height: 20px;
+      background-color: #ccc; /* Initial background color */
+      text-align: center;
+      line-height: 20px;
+      transition: background-color 0.3s, width 0.3s;
+    }
+
+    .increase-button {
+      padding: 8px;
+      background-color: #008CBA; /* Blue color */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="status-bar" id="statusBar" style="width: 0%;">Status: 0</div>
+
+<div class="content-block">
+  <p>Content Block 1</p>
+  <button class="increase-button" onclick="increaseStatus(10)">Increase Status</button>
+</div>
+
+<div class="content-block">
+  <p>Content Block 2</p>
+  <button class="increase-button" onclick="increaseStatus(20)">Increase Status</button>
+</div>
+
+<script>
+  var currentStatus = 0;
+  var maxStatus = 100; // Maximum status value
+
+  function increaseStatus(amount) {
+    currentStatus += amount;
+
+    // Ensure the status does not exceed the maximum
+    if (currentStatus > maxStatus) {
+      currentStatus = maxStatus;
+    }
+
+    updateStatusBar();
+  }
+
+  function updateStatusBar() {
+    var statusBar = document.getElementById("statusBar");
+    var percentage = (currentStatus / maxStatus) * 100;
+
+    // Update width and background color of the status bar
+    statusBar.style.width = percentage + "%";
+
+    // Change background color to purple when the status bar is filled
+    if (currentStatus === maxStatus) {
+      statusBar.style.backgroundColor = "purple";
+    }
+  }
+</script>
+
+</body>
+</html>
