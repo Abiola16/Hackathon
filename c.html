@@ -4,66 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom Toggle</title>
+
   <style>
     body {
       text-align: center;
       padding: 20px;
     }
 
-    h2 {
-      margin-bottom: 20px;
-    }
-
     .toggle-container {
-      position: relative;
       display: inline-block;
+      text-align: left;
     }
 
-    button {
+    #contentToggle {
       padding: 10px;
       cursor: pointer;
     }
 
-    .hidden {
+    #hiddenContent {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out;
     }
 
-    .visible {
-      max-height: 1000px; /* Set to a sufficiently large value */
-      overflow: hidden;
-      transition: max-height 0.3s ease-in;
-    }
-
-    p {
-      margin-top: 10px;
+    #hiddenContent.show {
+      max-height: 200px; /* Set to a suitable maximum height */
     }
   </style>
 </head>
 <body>
 
-<div class="container">
+<div class="toggle-container">
   <h2>Click the button to toggle the content</h2>
-
-  <div class="toggle-container">
-    <button onclick="toggleContent()">Toggle Content</button>
-    <div id="content" class="hidden">
-      <p>This is the hidden content that will smoothly drop down when the button is clicked.</p>
-    </div>
+  <div id="contentToggle" onclick="toggleContent()">Toggle Content</div>
+  <div id="hiddenContent">
+    <p>This is the hidden content that will smoothly drop down when the button is clicked.</p>
   </div>
-
-  <script>
-    function toggleContent() {
-      const content = document.getElementById("content");
-
-      // Toggle the 'hidden' and 'visible' classes to show/hide the content
-      content.classList.toggle("hidden");
-      content.classList.toggle("visible");
-    }
-  </script>
 </div>
+
+<script>
+  function toggleContent() {
+    const hiddenContent = document.getElementById("hiddenContent");
+    hiddenContent.classList.toggle("show");
+  }
+</script>
 
 </body>
 </html>
-
