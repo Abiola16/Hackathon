@@ -121,9 +121,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     background-color: #1a1a1a;
-    /* width: 800px; */
-    /* height: 60px; */
-    padding: 20px 20px;
+    padding: 14px 20px;
     border-radius: 10px;
     gap: 280px;
 }
@@ -151,15 +149,14 @@ nav{
     right: 45px;
 }
 .pay-container .container-wrapper .setup-container{
-    /* width: 775px; */
-    /* height: 120px; */
-    padding: 20px 10px;
-    border-radius: 10px;
+    padding: 20px 12px 6px 12px;
+    border-radius: 14px;
+    border: .5px solid green;
     background-color: #fff;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-direction: column;
+    width: 780px;
 }
 .pay-container .container-wrapper .setup-container .st-text-icon-container{
     display: flex;
@@ -180,6 +177,7 @@ nav{
     padding-top: 10px;
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 .pay-container .container-wrapper .setup-container .status-container .status-bar{
     width: 60px;
@@ -190,59 +188,54 @@ nav{
 .pay-container .container-wrapper .setup-container .shop-container{
     background-color: red;
     width: auto;
-    padding: 10px;
-    margin-top: 28px;
-    border-radius: 10px;
-}
-.pay-container .container-wrapper .setup-container .shop-container .store-container{
+    margin-top: 20px;
+    border-radius: 9px;
     display: flex;
-    gap: 10px;
-    /* flex-direction: column; */
-}
-.pay-container .container-wrapper .setup-container .shop-container .store-container .content-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* flex-direction: column; */
-    gap: 180px;
-}
-.pay-container .container-wrapper .setup-container .shop-container .store-container .content-container .text-container{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    width: 50%;
+    gap: 7px;
+    /* padding-inline-start: 0px; */
+    padding: 4px 0 14px 0;
 }
-.pay-container .container-wrapper .setup-container .shop-container .store-container .content-container .img-container{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    width: 50%;
+.pay-container .container-wrapper .setup-container .shop-container .circle-icon{
+    /* padding-top: px; */
 }
-.hidden {
-    opacity: 0;
+.pay-container .container-wrapper .setup-container .shop-container .content{
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    align-items: center;
+    /* opacity: 0;
     height: 0;
-    overflow: hidden;
+    overflow: hidden; */
     transition: opacity 0.3s, height 0.3s ease-out;
 }
-.hidden2 {
+
+.show-options {
+    opacity: 0;
+    /* height: auto;  */
+}
+.pay-container .container-wrapper .setup-container .shop-container .content .text{
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 5px;
 }
-.hidden.show {
-    opacity: 1;
-    height: auto; 
+.pay-container .container-wrapper .setup-container .shop-container .content .title{
+    font-size: 18px;
+    color: #1a1a1a;
+    padding-bottom: 20px;
 }
-.pay-container .container-wrapper .setup-container .shop-container .store-container .content-container .text-container .title{
-    color: #000;
-    padding-top: 10px;
-    padding-bottom: 15px;
+.pay-container .container-wrapper .setup-container .shop-container .content span{
+    font-size: 16px;
+    color: #1a1a1a;
 }
-.pay-container .container-wrapper .setup-container .shop-container .store-container .content-container .text-container a{
+.pay-container .container-wrapper .setup-container .shop-container .content a{
+    font-size: 17px;
     color: blue;
-    padding-top: 7px;
-    padding-bottom: 15px;
+    padding-top: 4px;
+    padding-bottom: 18px;
 }
-.pay-container .container-wrapper .setup-container .shop-container .store-container .content-container .text-container button{
+.pay-container .container-wrapper .setup-container .shop-container .content button{
     padding: 8px 10px;
     border: none;
     outline: none;
@@ -251,10 +244,28 @@ nav{
     color: #fff;
     padding: 10px 15px;
     width: fit-content;
+    /* margin-bottom: 10px; */
+}
+.pay-container .container-wrapper .setup-container .shop-container .content .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 
+
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s, height 0.3s ease-out;
+}
+.hidden.show {
+    opacity: 1;
+    height: auto; 
+}
 @media screen and (max-width:450px) {
     .pay-container .container-wrapper .plan-container{
         width: auto;
