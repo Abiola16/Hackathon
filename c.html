@@ -3,63 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toggle Two Sections</title>
-
   <style>
-    body {
+    /* Add some basic styling */
+    .shop-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      padding: 20px;
+      margin: 20px;
+      background-color: red;
     }
 
-    .toggle-container {
-      display: inline-block;
-      text-align: left;
-    }
-
-    #contentToggle {
-      padding: 10px;
+    .icon-container {
+      display: flex;
+      align-items: center;
       cursor: pointer;
     }
 
-    .hidden-content {
-      opacity: 0;
-      height: 0;
-      overflow: hidden;
-      transition: opacity 0.3s, height 0.3s ease-out;
+    .icon-container svg {
+      margin-right: 10px; /* Add margin to separate the icon and title */
     }
 
-    .hidden-content.show {
-      opacity: 1;
-      height: auto;
+    .content {
+      display: none;
+      max-width: 400px;
     }
 
-    #imageSection,
-    #additionalContentSection {
-      margin-top: 10px;
+    .content.active {
+      display: block;
+    }
+
+    .text {
+      margin-bottom: 20px;
+    }
+
+    .text a {
+      color: blue;
     }
   </style>
+  <title>Toggle Content</title>
 </head>
 <body>
 
-<div class="toggle-container">
-  <h2>Click the button to toggle the content</h2>
-  <div id="contentToggle" onclick="toggleContent()">Toggle Content</div>
-  
-  <div id="hiddenContent" class="hidden-content">
-    <div id="imageSection">
-      <img src="your-image-url.jpg" alt="Your Image">
+<div class="shop-container">
+  <div class="icon-container" onclick="toggleContent('content1')">
+    <!-- SVG icon 1 -->
+    <div id="iconWrapper1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" />
+      </svg>
+      <span class="title">Customize your online store</span>
     </div>
-    
-    <div id="additionalContentSection">
-      <p>This is additional hidden content that will smoothly drop down when the button is clicked.</p>
+  </div>
+  <div class="content" id="content1">
+    <!-- Content 1 -->
+    <div class="text">
+      <span class="title">Customize your online store</span>
+      <span>Choose a theme and add your logo, colors, images, to reflect your brand.</span>
+      <a href="#">Learn More</a>
+      <button>Customize theme</button>
+    </div>
+    <div class="image">
+      <img src="https://crushingit.tech/hackathon-assets/customise-store.png" alt="">
     </div>
   </div>
 </div>
 
+<div class="shop-container">
+  <div class="icon-container" onclick="toggleContent('content2')">
+    <!-- SVG icon 2 -->
+    <div id="iconWrapper2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" />
+      </svg>
+      <span class="title">Sell your products online</span>
+    </div>
+  </div>
+  <div class="content" id="content2">
+    <!-- Content 2 -->
+    <div class="text">
+      <span class="title">Sell your products online</span>
+      <span>Set up an online store with ease and reach customers around the world.</span>
+      <a href="#">Learn More</a>
+      <button>Start Selling</button>
+    </div>
+    <div class="image">
+      <img src="https://crushingit.tech/hackathon-assets/website.png" alt="">
+    </div>
+  </div>
+</div>
+
+<!-- Add two more shop containers with different icons and content -->
+
 <script>
-  function toggleContent() {
-    const hiddenContent = document.getElementById("hiddenContent");
-    hiddenContent.classList.toggle("show");
+  let currentContent = null;
+
+  function toggleContent(contentId) {
+    // Get the content element by ID
+    const contentElement = document.getElementById(contentId);
+
+    // If there's currently open content, close it
+    if (currentContent !== null) {
+      currentContent.classList.remove('active');
+    }
+
+    // Toggle the 'active' class to show/hide the content
+    contentElement.classList.toggle('active');
+
+    // Update the currentContent variable
+    currentContent = contentElement.classList.contains('active') ? contentElement : null;
   }
 </script>
 
