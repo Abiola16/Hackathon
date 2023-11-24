@@ -38,19 +38,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  var notificationDropdown = document.querySelector(".notification-dropdown");
+  var notification = document.querySelector(".notification-container");
 
+  notification.addEventListener("click", () => {
+    if (notificationDropdown.style.display === "block") {
+        notificationDropdown.style.display = "none";
+    } else {
+        notificationDropdown.style.display = "block";
+    }
+  });
+});
 
-// function toggleIcon() {
-//   const icon = document.querySelector('.icons');
-//   const currentState = icon.getAttribute('data-state');
-
-//   // Toggle between two SVG URLs
-//   if (currentState === 'dashed') {
-//     icon.innerHTML = '<image xlink:href="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" width="24" height="24"/>';
-//     icon.setAttribute('data-state', 'checkmark');
-//   } else if (currentState === 'checkmark') {
-//     icon.innerHTML = '<image xlink:href="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg" width="24" height="24"/>';
-//     icon.setAttribute('data-state', 'dashed');
-//   }
-// }
   

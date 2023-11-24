@@ -59,12 +59,60 @@ nav{
     margin-right: 10px;
     padding: 1px 5px;
 }
+.notification-dropdown {
+    display: block;
+    position: absolute;
+    background-color: #FFFFFF;
+    min-width: 160px;
+    width: 380px;
+    padding: 15px 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    right: 10%;
+    top: 10%;
+    cursor: pointer;
+}
+.notification-dropdown .dropdown-container{
+    display: flex;
+    justify-content: space-between;
+}
+.notification-dropdown .dropdown-container .alerts{
+    display: flex;
+    justify-content: center;
+}
+.notification-dropdown .dropdown-container .icons{
+    display: flex;
+    justify-content: center;
+}
+.notification-dropdown .dropdown-container .icons .svgg{
+   position: relative;
+   right: 5px;
+}
+.notification-dropdown .dropdown-container2{
+    font-size: 14px;
+    margin: 2px 6px 0px 0;
+    background-color: #F1F1F1;
+    padding: 12px 8px;
+    text-align: center;
+}
+.alerttt:focus{
+    outline: none; 
+    border: 2px solid blue;
+    border-radius: 15px;
+    /* padding-inline-start: 5px; */
+}
+
+
+
+
+
+
 .user-container .user-profile{
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #E3E3E3;
-    /* padding: 8px 10px; */
     background-color: #303030;
     border-radius: 5px;
     gap: 10px;
@@ -79,51 +127,75 @@ nav{
     margin: 3px 3px 3px 0;
     color: #209761;
 }
-
+.dropdown a {
+    color: #333;
+    padding: 10px 16px 14px 0px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    margin-inline: 10px;
+}
+.dropdown a:focus,
+.dropdown .spans:focus{
+    outline: none; 
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding-inline-start: 5px;
+}
 .dropdown {
     display: none;
     position: absolute;
     background-color: #FFFFFF;
-    min-width: 160px;
+    min-width: 180px;
+    width: 380px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 8px;
-    padding: 0 120px 0 0;
-    right: 1%; /* Adjust the position as needed */
-    top: 10%; /* Adjust the position as needed */
+    right: 1%;
+    top: 10%;
+    cursor: pointer;
 }
-.user{
-    padding: 6px 10px;
-    width: 165%;
-}
-.user .user-profile{
-    display: flex;
-    justify-content: start;
-    color: #E3E3E3;
-    background-color: #303030;
+.dropdown .user{
+    margin: 8px;
+    width: auto;
     border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F1F1F1;
+    align-items: center;
+}
+
+.dropdown .user .user-profile2{
+    display: flex;
+    align-items: center;
+    color: #E3E3E3;
     gap: 15px;
 }
-.user .user-profile .user-name{
-   margin-left: 0px;
+.dropdown .user .user-profile2 .user-name2{
+   color: #303030;
 }
-.user .user-profile .user-name-abb{
+.dropdown .user .user-profile2 .user-name-abb2{
     background-color: #36FB1A;
     border-radius: 6px;
     color: #209761;
     position: relative;
     left: 7px;
+    padding: 6px 6px;
+}
+.dropdown .all-stores{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    padding-left: 12px;
+    margin: 8px 0;
 }
 .dropdown .settings{
     border-bottom: 1px solid #E1E1E1;
     border-top: 1px solid #E1E1E1;
 }
-.dropdown a {
-    color: #333;
-    padding: 14px 16px 14px 10px;
-    text-decoration: none;
-    display: block;
-    font-size: 15px;
+.dropdown .spans{
+    padding-top: 10px;
 }
 .dropdown .spans span {
     color: #333;
@@ -136,12 +208,16 @@ nav{
     font-weight: 600;
     font-size: 15px;
 }
-.dropdown a:hover {
-    background-color: #ddd;
+.settings2{
+    padding: 5px 0;
 }
 @media screen and (max-width:964px){
     .search-container{
         left: 40px;
+    }
+    .dropdown {   
+        right: 2%;
+        top: 12%;
     }
 }
 @media screen and (max-width:450px) {
@@ -166,6 +242,9 @@ nav{
     .user-container .user-profile .user-name{
         display: none;
     }   
+    .dropdown {   
+        width: 280px;
+    }
 }
 
 
@@ -371,7 +450,6 @@ nav{
 
 .pay-container .container-wrapper .setup-container .shop-container .make-store .content{
     display: flex;
-    /* justify-content: center; */
     width: 100%;
     align-items: center;
     column-gap: 50px;
@@ -406,7 +484,6 @@ nav{
     position: relative;
     top: 12px;
 } 
-
 .pay-container .container-wrapper .setup-container .shop-container .make-store .content .image{
    display: flex;
    justify-content: center;
