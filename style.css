@@ -60,7 +60,7 @@ nav{
     padding: 1px 5px;
 }
 .notification-dropdown {
-    display: block;
+    display: none;
     position: absolute;
     background-color: #FFFFFF;
     min-width: 160px;
@@ -100,10 +100,7 @@ nav{
     outline: none; 
     border: 2px solid blue;
     border-radius: 15px;
-    /* padding-inline-start: 5px; */
 }
-
-
 
 
 
@@ -190,6 +187,9 @@ nav{
     padding-left: 12px;
     margin: 8px 0;
 }
+.dropdown .all-stores:focus{
+    
+}
 .dropdown .settings{
     border-bottom: 1px solid #E1E1E1;
     border-top: 1px solid #E1E1E1;
@@ -219,6 +219,10 @@ nav{
         right: 2%;
         top: 12%;
     }
+    .notification-dropdown {   
+        right: 2%;
+        top: 12%;
+    }
 }
 @media screen and (max-width:450px) {
     .desk-logo{
@@ -245,8 +249,39 @@ nav{
     .dropdown {   
         width: 280px;
     }
+    .notification-dropdown {   
+        /* right: 4%; */
+        justify-content: center;
+    }
 }
-
+@media screen and (max-width:408px) {
+    .notification-dropdown {   
+        /* right: 2.5%; */
+    }
+}
+@media screen and (max-width:368px) {
+    .notification-dropdown {  
+        right: 4%; 
+        width: 330px;
+    }  
+}
+@media screen and (max-width:354px) {
+    .notification-dropdown {  
+        right: 6%; 
+        width: 300px;
+    }  
+}
+@media screen and (max-width:340px) {
+    .notification-dropdown {  
+        right: 5%; 
+    }  
+}
+@media screen and (max-width:320px) {
+    .notification-dropdown {  
+        right: 4%; 
+        width: 290px;
+    }  
+}
 
 
 
